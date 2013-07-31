@@ -32,7 +32,8 @@ public class MainActivity extends Activity {
 			    Calendar calendar = Calendar.getInstance();
 			    calendar.setTimeInMillis(System.currentTimeMillis());
 			    calendar.add(Calendar.SECOND, 10);
-			    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+			    //alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+			    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 5*1000, pendingIntent);
 
 			    Toast.makeText(MainActivity.this, "Alarm set", Toast.LENGTH_SHORT).show();
 		    };
